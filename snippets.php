@@ -1,4 +1,16 @@
 /*
+* get the_title for posts
+*/
+
+// Method #1
+<h1><?php the_title(); ?></h1>
+
+// Method #2
+<?php the_title( '<h1>' , '</h1>' );
+
+
+
+/*
 * Sidebar snippets
 * @documentation: https://developer.wordpress.org/reference/functions/register_sidebar/
 */
