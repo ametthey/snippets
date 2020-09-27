@@ -1,5 +1,6 @@
 /*
 * Sidebar snippets
+* @documentation: https://developer.wordpress.org/reference/functions/register_sidebar/
 */
 
 // functions.php or includes files
