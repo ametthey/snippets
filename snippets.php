@@ -47,6 +47,22 @@
 
 /****************************************************
  *
+ * Login form with arguemnts
+ *
+ * *************************************************/
+
+ <?php $args = [
+            'label_username'    => 'Entrer votre identifiant',
+            'label_password'    => 'Entrer votre mot de passe',
+            'label_remember'    => 'Vous souvenir de vous ?'
+       ];
+
+        wp_login_form( $args );
+ ?>
+
+
+/****************************************************
+ *
  * If user is not logged in : display form
  * if user logged in : !display form
  *
