@@ -79,6 +79,7 @@
  <?php if ( !is_user_logged_in() ) : ?>
     <?php wp_login_form(); ?>
  <?php endif; ?>
+
 /****************************************************
  *
  * URL that allow user to get new passord
@@ -112,22 +113,23 @@
  *  https://developer.wordpress.org/reference/functions/remove_menu_page/
  *
  * *************************************************/
-<?php
-function _themename_remove_options_menu(){
-  // remove_menu_page( 'edit.php' );                   //Posts
-  // remove_menu_page( 'edit-comments.php' );          //Comments
-  // remove_menu_page( 'index.php' );                  //Dashboard
-  // remove_menu_page( 'jetpack' );                    //Jetpack*
-  // remove_menu_page( 'upload.php' );                 //Media
-  // remove_menu_page( 'edit.php?post_type=page' );    //Pages
-  // remove_menu_page( 'themes.php' );                 //Appearance
-  // remove_menu_page( 'plugins.php' );                //Plugins
-  // remove_menu_page( 'users.php' );                  //Users
-  // remove_menu_page( 'tools.php' );                  //Tools
-  // remove_menu_page( 'options-general.php' );        //Settings
 
-}
-add_action( 'admin_menu', '_themename_remove_options_menu' );
+<?php
+    function _themename_remove_options_menu(){
+      // remove_menu_page( 'edit.php' );                   //Posts
+      // remove_menu_page( 'edit-comments.php' );          //Comments
+      // remove_menu_page( 'index.php' );                  //Dashboard
+      // remove_menu_page( 'jetpack' );                    //Jetpack*
+      // remove_menu_page( 'upload.php' );                 //Media
+      // remove_menu_page( 'edit.php?post_type=page' );    //Pages
+      // remove_menu_page( 'themes.php' );                 //Appearance
+      // remove_menu_page( 'plugins.php' );                //Plugins
+      // remove_menu_page( 'users.php' );                  //Users
+      // remove_menu_page( 'tools.php' );                  //Tools
+      // remove_menu_page( 'options-general.php' );        //Settings
+
+    }
+    add_action( 'admin_menu', '_themename_remove_options_menu' );
 ?>
 
 
@@ -137,6 +139,7 @@ add_action( 'admin_menu', '_themename_remove_options_menu' );
  * @documentation: https://developer.wordpress.org/reference/functions/add_theme_support/
  *
  * *************************************************/
+
 <?php
     add_theme_support( 'title-tag' );
     add_theme_support( '' );
@@ -158,6 +161,7 @@ add_action( 'admin_menu', '_themename_remove_options_menu' );
  * Add image size
  *
  * *************************************************/
+
 <?php
     function _themename_image_configuration() {
         // add_image_size( 'nom', hauteur(chiffre), largeur(chiffre) );
@@ -202,3 +206,52 @@ add_action( 'admin_menu', '_themename_remove_options_menu' );
 <div class="container">
     <?php dynamic_sidebar( 'my-footer-sidebar' ); ?>
 </div>
+
+/****************************************************
+ *
+ *          POSTS TAGS
+ *          works with post, page & cpt
+ *
+ * *************************************************/
+
+<!-- Class Tags -->
+
+<?php body_class(); ?>
+
+<?php body_class( [ 'another-body-class', 'and-another-body-class' ] ); ?>
+
+<?php post_class(); ?>
+
+<?php post_class( [ 'another-class', 'and-another-class' ] )? ?>
+
+<!-- Common Tags -->
+
+<!-- this will be the ID of a post or a page -->
+<?php the_ID(); ?>
+
+<?php the_title(); ?>
+
+<?php the_content(); ?>
+
+ /********************************************
+ * This will work if you activate the READ MORE
+ * funtionnality in the paragraph block
+ ********************************************/
+<?php the_content( 'Read More' ); ?>
+
+<?php the_excerpt(); ?>
+
+<?php the_category(); ?>
+
+<?php the_tags(); ?>
+
+<!-- Date Tags -->
+
+<!-- Post Link Tags -->
+
+<!-- Attachment Tags -->
+
+<!-- Less Common Tags -->
+
+<!-- get_the_ ... Tags -->
+
