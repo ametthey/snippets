@@ -7,7 +7,7 @@
  <!-- in functions.php -->
 <?php
     register_nav_menus( array(
-        'header-menu'   => esc_html__( ' Menu du header ', '_themename' )
+        'header-menu'   => esc_html__( 'Main menu', '_themename' )
     ) );
 ?>
 
@@ -15,7 +15,16 @@
 <nav>
     <?php
         $args = [
+            // Location pickable in Customizer
             'theme_location'    => 'header-menu',
+            // Assigns a default menu to location
+            'menu'              => 'Main menu',
+            // Main wrapper around the ul of posts
+            'container'         => 'div',
+            'container_class'   => 'container-class',
+            'container_id'      => 'container-id',
+            // Wrapper for menu items - default to ul
+
         ];
         wp_nav_menu( $args );
     ?>
