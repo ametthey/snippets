@@ -44,6 +44,29 @@
 
  <?php wp_loginout( get_permalink() ); ?>
 
+/****************************************************
+ *
+ * URL that allow user to get new passord
+ *
+ * *************************************************/
+
+ <a href="<?php esc_url( wp_lostpassword_url() ); ?>">
+     <?php esc_html_e( 'Lost password? ', '_themename' ); ?>
+ </a>
+
+
+/****************************************************
+ *
+ * Display List Of Archive by parameters
+ * @info : display them by year and in descending order
+ *
+ * *************************************************/
+
+ <?php $args = [
+             'type'  => 'yearly',
+             'order' => 'DESC'
+       ];
+       wp_get_archives( $args )
 
 /****************************************************
  *
