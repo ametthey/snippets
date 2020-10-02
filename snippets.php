@@ -36,6 +36,13 @@
 <?php the_title( '<h1>' , '</h1>' ); ?>
 
 
+/****************************************************
+ *
+ * Log out and redirect directly to the current page
+ *
+ * *************************************************/
+
+ <?php wp_loginout( get_permalink() ); ?>
 
 
 
