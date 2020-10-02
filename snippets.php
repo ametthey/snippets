@@ -45,6 +45,16 @@
  <?php wp_loginout( get_permalink() ); ?>
 
 
+/****************************************************
+ *
+ * If user is not logged in : display form
+ * if user logged in : !display form
+ *
+ * *************************************************/
+
+ <?php if ( !is_user_logged_in ) : ?>
+    <?php wp_login_form(); ?>
+ <?php endif; ?>
 
 /****************************************************
  *
