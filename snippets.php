@@ -271,3 +271,23 @@
 
     the_post_thumbnail( 'full' , $attr );
 ?>
+
+/****************************************************
+ *      AUTHOR META
+ * *************************************************/
+
+<?php the_author_meta( 'display_name' ) ?>
+<?php the_author_meta( 'user_login' ); ?>
+<?php the_author_meta( 'user_pass' ); ?>
+<?php the_author_meta( 'user_nicename' ); ?>
+<?php the_author_meta( 'user_email' ); ?>
+<?php the_author_meta( 'user_url' ); ?>
+<?php the_author_meta( 'display_name' ); ?>
+<?php the_author_meta( 'nickname' ); ?>
+<?php the_author_meta( 'first_name' ); ?>
+<?php the_author_meta( 'last_name' ); ?>
+<?php the_author_meta( 'description' ); ?>
+<?php the_author_meta( 'user_level' ); ?>
+<?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
+<?php echo get_edit_user_link( get_the_author_meta( 'ID' ) ); ?>
+<?php _e( 'Edit', 'wptags' ); ?>
