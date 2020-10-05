@@ -260,5 +260,14 @@
  * *************************************************/
 
 <?php if ( has_post_thumbnail() ) : ?>
-    <?php the_post_thumbnail(); ?>
+    <?php the_post_thumbnail( $size, $attr ); ?>
 <?php endif; ?>
+
+<?php
+    $attr = [
+        'class'     => 'img-featured',
+        'title'     => get_the_title()
+    ];
+
+    the_post_thumbnail( 'full' , $attr );
+?>
