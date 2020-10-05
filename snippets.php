@@ -277,17 +277,28 @@
  * *************************************************/
 
 <?php the_author_meta( 'display_name' ) ?>
+<?php the_author_meta( 'display_name' , $post->post_author ) ?>
 <?php the_author_meta( 'user_login' ); ?>
+<?php the_author_meta( 'user_login' , $post->post_author ); ?>
 <?php the_author_meta( 'user_pass' ); ?>
+<?php the_author_meta( 'user_pass' , $post->post_author); ?>
 <?php the_author_meta( 'user_nicename' ); ?>
+<?php the_author_meta( 'user_nicename' , $post->post_author); ?>
 <?php the_author_meta( 'user_email' ); ?>
+<?php the_author_meta( 'user_email' , $post->post_author); ?>
 <?php the_author_meta( 'user_url' ); ?>
+<?php the_author_meta( 'user_url' , $post->post_author); ?>
 <?php the_author_meta( 'display_name' ); ?>
+<?php the_author_meta( 'display_name' , $post->post_author); ?>
 <?php the_author_meta( 'nickname' ); ?>
+<?php the_author_meta( 'nickname' , $post->post_author); ?>
 <?php the_author_meta( 'first_name' ); ?>
+<?php the_author_meta( 'first_name' , $post->post_author); ?>
 <?php the_author_meta( 'last_name' ); ?>
+<?php the_author_meta( 'last_name' , $post->post_author); ?>
 <?php the_author_meta( 'description' ); ?>
+<?php the_author_meta( 'description' , $post->post_author); ?>
 <?php the_author_meta( 'user_level' ); ?>
+<?php the_author_meta( 'user_level' , $post->post_author); ?>
 <?php echo get_avatar( get_the_author_meta( 'ID' ) ); ?>
 <?php echo get_edit_user_link( get_the_author_meta( 'ID' ) ); ?>
-<?php _e( 'Edit', 'wptags' ); ?>
