@@ -318,3 +318,8 @@ function custom_redirects() {
 
 ?>
 
+/************************************************************
+* Custom copyright based on the year and the name of the site
+*************************************************************/
+
+<?php $footer_message = '&copy' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ); ?>
