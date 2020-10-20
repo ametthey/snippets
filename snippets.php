@@ -323,3 +323,15 @@ function custom_redirects() {
 *************************************************************/
 
 <?php $footer_message = '&copy' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ); ?>
+
+/************************************************************
+ * Display Taxonomy from a custom post type
+ * @documentation: https://developer.wordpress.org/reference/functions/get_the_terms/
+*************************************************************/
+
+<?php
+    $terms = get_the_terms( $post->ID , 'custom_project_type', array('number' => 3) );
+    foreach ( $terms as $term ) {
+        echo '<span class="menu__project__item__category">'. $term->name . '</span> <span>-</span> ';
+    }
+?>
