@@ -36,3 +36,10 @@ if ( scrollToTopButton ) {
         scrollToTop();
     }
 }
+
+
+/************************************************
+ * Random Number with 3 digits
+ ***********************************************/
+
+Math.floor(Math.random()*(999-100+1)+100);
