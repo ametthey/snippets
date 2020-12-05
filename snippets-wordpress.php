@@ -335,3 +335,19 @@ function custom_redirects() {
         echo '<span class="menu__project__item__category">'. $term->name . '</span> <span>-</span> ';
     }
 ?>
+
+/************************************************************
+ * Change time format to '1 Hour Ago' or '1 Week Ago'
+ * This is specific for post
+ * https://www.isitwp.com/convert-date-timestamp-time-ago-posts/
+*************************************************************/
+
+<?php
+// Change type if needed
+function time_ago( $type = 'post' ) {
+    $d = 'comment' == $type ? 'get_comment_time' : 'get_post_time';
+    return human_time_diff($d('U'), current_time('timestamp')) . " " . __('ago');
+}
+?>
+
+<?php echo time_ago(); ?>
