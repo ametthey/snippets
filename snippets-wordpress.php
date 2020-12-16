@@ -351,3 +351,29 @@ function time_ago( $type = 'post' ) {
 ?>
 
 <?php echo time_ago(); ?>
+
+/************************************************************
+ * Exclude current post from WP_Query
+ * https://pineco.de/snippets/exclude-current-post-from-wp_query/
+*************************************************************/
+
+<?php
+    $args = {
+        'post_type'     => array( 'customPostTypeName' ),
+        'post__not_in'  => array( get_the_ID() ),
+    }
+
+    $query = new WP_Query( $args );
+
+    if ( $query->have_posts() ) :
+        while ( $query->have_posts() ) : $query->the_post();
+            // HTML template
+        endwhile;
+    endif;
+
+    wp_reset_postdata();
+}
+
+
+
+?>
