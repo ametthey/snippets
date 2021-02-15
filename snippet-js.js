@@ -43,3 +43,30 @@ if ( scrollToTopButton ) {
  ***********************************************/
 
 Math.floor(Math.random()*(999-100+1)+100);
+
+
+/************************************************
+ * Intersection Observer
+ * querySelectorAll
+ * adding and removing is-visible class
+ ***********************************************/
+
+let sections = document.querySelectorAll(".swiper-container-vertical .swiper-slide");
+const options = {
+  root: null,
+  rootMargin: '0px',
+};
+
+observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.intersectionRatio > 0) {
+        entry.target.classList.add('is-visble');
+    } else {
+        entry.target.classList.remove('is-visible');
+    }
+  });
+});
+
+sections.forEach(section => observer.observe(section));
+
+
