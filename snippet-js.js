@@ -70,3 +70,46 @@ observer = new IntersectionObserver(entries => {
 sections.forEach(section => observer.observe(section));
 
 
+/************************************************
+ * Class declaration
+ * exemple with Dog
+ ***********************************************/
+
+// Class declaration
+class Dog {
+    // We need this to declare arguments
+    constructor(name, breed) {
+        this.name = name;
+        this.breed = breed;
+    }
+    // Example of a method
+    bark() {
+        console.log(`This is a method for bark`);
+    }
+    // This is a static method that can be called on the class directly
+    // Dog.info
+    static info() {
+        console.log('this is a very important information');
+    }
+
+    // we can get information GETTER
+    get description() {
+        return `${this.name} is a ${this.breed} type of dog`
+    }
+
+    // we can set a new information SETTER
+    set nicknames(value) {
+        this.nick = value.trim();
+    }
+
+    // we can get infor from new setter
+    get nicknames() {
+        return this.nick;
+    }
+}
+
+// we use the class the create a new Dog
+const dolly = Dog( 'Dolly', 'levrier' );
+
+// we use the method bark of the class Dog
+dolly.bark();
