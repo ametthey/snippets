@@ -53,18 +53,18 @@ Math.floor(Math.random()*(999-100+1)+100);
 
 let sections = document.querySelectorAll(".swiper-container-vertical .swiper-slide");
 const options = {
-  root: null,
-  rootMargin: '0px',
+    root: null,
+    rootMargin: '0px',
 };
 
 observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.intersectionRatio > 0) {
-        entry.target.classList.add('is-visble');
-    } else {
-        entry.target.classList.remove('is-visible');
-    }
-  });
+    entries.forEach(entry => {
+        if (entry.intersectionRatio > 0) {
+            entry.target.classList.add('is-visble');
+        } else {
+            entry.target.classList.remove('is-visible');
+        }
+    });
 });
 
 sections.forEach(section => observer.observe(section));
@@ -113,3 +113,64 @@ const dolly = Dog( 'Dolly', 'levrier' );
 
 // we use the method bark of the class Dog
 dolly.bark();
+
+/************************************************
+ * Snippet to get the position of the mouse
+ ***********************************************/
+
+window.addEventListener( 'mousemove', (event) => {
+    console.log( event.clientX, event.clientX );
+});
+
+
+const cursor = {
+    x: 0,
+    y: 0
+}
+window.addEventListener( 'mousemove', (event) => {
+    cursor.x = event.clientX / sizes.width - 0.5
+    cursor.y = event.clientY / sizes.height - 0.5
+});
+
+/************************************************
+ * Regex
+ * Replace whitespace by character
+ ***********************************************/
+const title = 'Je suis là';
+title.replace(/\s/g, '+');
+console.log(title)
+'Je+suis+là';
+
+/************************************************
+ * Detect inactivity on mousemove and keydown
+ ***********************************************/
+var inactivityTime = function () {
+    var time;
+    window.onload = resetTimer;
+    // DOM Events
+    document.onmousemove = resetTimer;
+    document.onkeypress = resetTimer;
+
+    function fadeOut() {
+        // Here create the function you want to be executed
+    }
+
+    function resetTimer() {
+        clearTimeout(time);
+        time = setTimeout(fadeOut, 6000)
+    }
+};
+
+inactivityTime();
+
+/************************************************
+ * Close with esc key
+ ***********************************************/
+
+document.addEventListener('keydown', function(e) {
+    let keyCode = e.keyCode;
+    if (keyCode === 27) {//keycode is an Integer, not a String
+
+    }
+});
+
