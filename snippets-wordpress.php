@@ -377,3 +377,19 @@ function time_ago( $type = 'post' ) {
 
 
 ?>
+
+/************************************************************
+ * Prev and Next buttons
+ * https://bryantwebdesign.com/code/wordpress-custom-post-type-navigation/
+*************************************************************/
+<div><?php previous_post_link( '%link', 'Previous' ) ?></div>
+<div><?php next_post_link( '%link', 'Next' ) ?></div>
+
+/************************************************************
+ * Echo out all the categories for debugging
+ * This can be used for other stuffs
+*************************************************************/
+<?php
+ $categories = get_categories();
+ print_r($categories);
+?>
