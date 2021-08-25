@@ -174,3 +174,13 @@ document.addEventListener('keydown', function(e) {
     }
 });
 
+
+/************************************************
+ * Transform number from 1 to 01
+ * https://gist.github.com/niksumeiko/6856869
+ ***********************************************/
+function numberToDay(j) {
+  return ('0' + j).slice(-2);
+}
+
+console.log( numberToDay(8) ); // output 08

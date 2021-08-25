@@ -325,21 +325,21 @@ function custom_redirects() {
 <?php $footer_message = '&copy' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ); ?>
 
 /************************************************************
- * Display Taxonomy from a custom post type
- * @documentation: https://developer.wordpress.org/reference/functions/get_the_terms/
+* Display Taxonomy from a custom post type
+* @documentation: https://developer.wordpress.org/reference/functions/get_the_terms/
 *************************************************************/
 
 <?php
-    $terms = get_the_terms( $post->ID , 'custom_project_type', array('number' => 3) );
-    foreach ( $terms as $term ) {
-        echo '<span class="menu__project__item__category">'. $term->name . '</span> <span>-</span> ';
-    }
+$terms = get_the_terms( $post->ID , 'custom_project_type', array('number' => 3) );
+foreach ( $terms as $term ) {
+    echo '<span class="menu__project__item__category">'. $term->name . '</span> <span>-</span> ';
+}
 ?>
 
 /************************************************************
- * Change time format to '1 Hour Ago' or '1 Week Ago'
- * This is specific for post
- * https://www.isitwp.com/convert-date-timestamp-time-ago-posts/
+* Change time format to '1 Hour Ago' or '1 Week Ago'
+* This is specific for post
+* https://www.isitwp.com/convert-date-timestamp-time-ago-posts/
 *************************************************************/
 
 <?php
@@ -353,25 +353,25 @@ function time_ago( $type = 'post' ) {
 <?php echo time_ago(); ?>
 
 /************************************************************
- * Exclude current post from WP_Query
- * https://pineco.de/snippets/exclude-current-post-from-wp_query/
+* Exclude current post from WP_Query
+* https://pineco.de/snippets/exclude-current-post-from-wp_query/
 *************************************************************/
 
 <?php
-    $args = {
-        'post_type'     => array( 'customPostTypeName' ),
-        'post__not_in'  => array( get_the_ID() ),
-    }
+$args = {
+'post_type'     => array( 'customPostTypeName' ),
+    'post__not_in'  => array( get_the_ID() ),
+}
 
-    $query = new WP_Query( $args );
+$query = new WP_Query( $args );
 
-    if ( $query->have_posts() ) :
-        while ( $query->have_posts() ) : $query->the_post();
-            // HTML template
-        endwhile;
-    endif;
+if ( $query->have_posts() ) :
+    while ( $query->have_posts() ) : $query->the_post();
+// HTML template
+endwhile;
+endif;
 
-    wp_reset_postdata();
+wp_reset_postdata();
 }
 
 
@@ -379,17 +379,76 @@ function time_ago( $type = 'post' ) {
 ?>
 
 /************************************************************
- * Prev and Next buttons
- * https://bryantwebdesign.com/code/wordpress-custom-post-type-navigation/
+* Prev and Next buttons
+* https://bryantwebdesign.com/code/wordpress-custom-post-type-navigation/
 *************************************************************/
 <div><?php previous_post_link( '%link', 'Previous' ) ?></div>
 <div><?php next_post_link( '%link', 'Next' ) ?></div>
 
 /************************************************************
- * Echo out all the categories for debugging
- * This can be used for other stuffs
+* Echo out all the categories for debugging
+* This can be used for other stuffs
 *************************************************************/
 <?php
- $categories = get_categories();
- print_r($categories);
+$categories = get_categories();
+print_r($categories);
 ?>
+
+/**********************************************************************
+ * Cela permet simplement de vérifier si WordPress est bien chargé,
+ * en vérifiant si une de ses constantes est définie. Si quelqu’un
+ * essaie d’accéder directement au fichier sans passer par WordPress,
+ * on exécute die() et donc on arrête le script.
+**********************************************************************/
+
+<?php
+    defined( 'ABSPATH' ) || die();
+?>
+
+/**********************************************************************
+* Disable Admin bar for every type of users except admin
+**********************************************************************/
+<?php
+function _themename_remove_admin_bar_for_everyone() {
+    if (!current_user_can('administrator') && !is_admin()) {
+        show_admin_bar(false);
+    }
+}
+add_action('after_setup_theme', '_themename_remove_admin_bar_for_everyone');
+?>
+
+/**********************************************************************
+ * R_Debug
+**********************************************************************/
+
+<!-- list_cron et ceux du dessus-->
+
+
+<!-- List hooks as currently defined -->
+<?php R_Debug::list_hooks( $filter ); ?>
+
+<!-- Output hook info -->
+<?php R_Debug::dump_hook( $tag, $hook ); ?>
+
+<!-- Enable live listing of hooks as they run -->
+<?php R_Debug::list_live_hooks("content"); ?>
+
+<?php R_Debug::list_hook_details("input"); ?>
+<?php R_Debug::list_plugins(); ?>
+<?php R_Debug::list_post("postID"); ?>
+<?php R_Debug::list_queries(); ?>
+<?php R_Debug::explain_query("query"; ?>
+
+/**********************************************************************
+ * All Post Status
+**********************************************************************/
+
+* 'publish' - a published post or page
+* 'pending' - post is pending review
+* 'draft' - a post in draft status
+* 'auto-draft' - a newly created post, with no content
+* 'future' - a post to publish in the future
+* 'private' - not visible to users who are not logged in
+* 'inherit' - a revision. see get_children.
+* 'trash' - post is in trashbin. added with Version 2.9
+
