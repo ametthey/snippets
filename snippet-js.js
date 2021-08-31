@@ -44,6 +44,12 @@ if ( scrollToTopButton ) {
 
 Math.floor(Math.random()*(999-100+1)+100);
 
+/************************************************
+ * Random Number with 2 digits
+ ***********************************************/
+Math.floor(Math.random() * 100)
+
+
 
 /************************************************
  * Intersection Observer
