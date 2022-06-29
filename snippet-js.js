@@ -1,3 +1,16 @@
+
+/************************************************
+ * useful values
+ ***********************************************/
+
+const element = document.querySelector('.element');
+const distanceFromTop = e.currentTarget.scrollTop; // how
+element.addEventListener( 'scroll', (e) => {
+    console.log(`La distance entre la distance actuelle et le haut de l'élement est ${distanceFromTop}`);
+});
+
+
+
 /************************************************
  * Getting a random value from a JavaScript array
  ***********************************************/
@@ -12,30 +25,28 @@ console.log( myArray[randomItem] ); // will out a random value of myArray
 /************************************************
  * Back to top
  ***********************************************/
+function backToTop() {
+    const container = document.querySelector('.container-archive-list');
+    const button = document.querySelector(".footer-back-to-top")
+    container.addEventListener('scroll', () => {
+        if (container.offsetHeight + container.scrollTop >= container.scrollHeight) {
 
-// add to the html tag
-scroll-behavior: smooth;
+            button.classList.add('visible');
 
-// target the selector of back to top button
-const scrollToTopButton = document.querySelector('.button__top');
+            button.addEventListener("click", scrollToTop)
 
-// Function to make the page go up to to the top
-const scrollToTop = () => {
-    const c = document.documentElement.scrollTop || document.body.scrollTop;
-    // https://developer.mozilla.org/en-US/docs/Web/API/window/requestAnimationFrame
-    if (c > 0) {
-        window.scrollToTop;
-        window.scrollTo(0, c - c / 0.5);
-    }
-};
-
-// if button exist, execute the function
-if ( scrollToTopButton ) {
-    scrollToTopButton.onclick = function(e) {
-        e.preventDefault();
-        scrollToTop();
-    }
+            function scrollToTop() {
+                container.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                })
+            }
+        } else {
+            button.classList.remove('visible');
+        }
+    });
 }
+
 
 
 /************************************************
@@ -56,24 +67,30 @@ Math.floor(Math.random() * 100)
  * querySelectorAll
  * adding and removing is-visible class
  ***********************************************/
+  const observerOptions = {
+       root: null,
+       threshold: 0,
+       rootMargin: '0px 0px -50px 0px'
+   };
 
-let sections = document.querySelectorAll(".swiper-container-vertical .swiper-slide");
-const options = {
-    root: null,
-    rootMargin: '0px',
-};
+const observer = new IntersectionObserver(entries => {
+       entries.forEach(entry => {
+           if (entry.isIntersecting) {
+               entry.target.classList.add('in-view');
+               observer.unobserve(entry.target);
+           }
+       });
+   }, observerOptions);
 
-observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.intersectionRatio > 0) {
-            entry.target.classList.add('is-visble');
-        } else {
-            entry.target.classList.remove('is-visible');
-        }
-    });
+window.addEventListener('DOMContentLoaded', (event) => {
+
+const sections = Array.from(document.getElementsByClassName('section'));
+
+for (let section of sections) {
+  observer.observe(section);
+}
+
 });
-
-sections.forEach(section => observer.observe(section));
 
 
 /************************************************
@@ -186,7 +203,124 @@ document.addEventListener('keydown', function(e) {
  * https://gist.github.com/niksumeiko/6856869
  ***********************************************/
 function numberToDay(j) {
-  return ('0' + j).slice(-2);
+    return ('0' + j).slice(-2);
 }
 
 console.log( numberToDay(8) ); // output 08
+
+/************************************************
+ * Fade background color on scroll
+ ***********************************************/
+
+let last_known_scroll_position = 0;
+let ticking = false;
+
+// A PROPOS
+const element = document.querySelector('.content--apropos');
+const elementHeight = document.querySelector('.content--apropos').clientHeight;
+const half = elementHeight / 2;
+
+function fadeBackgroundColor(scroll_pos) {
+
+    // ADD CLASS TO FADE AT HALF THE POSITION
+    if ( scroll_pos < half ) {
+        element.classList.remove('is-fading');
+    } else if ( scroll_pos > half) {
+        element.classList.add('is-fading');
+    }
+
+}
+
+window.addEventListener('scroll', function(e) {
+    last_known_scroll_position = window.scrollY;
+
+    if (!ticking) {
+        window.requestAnimationFrame(function() {
+            fadeBackgroundColor(last_known_scroll_position);
+            ticking = false;
+        });
+
+        ticking = true;
+    }
+});
+
+
+/************************************************
+ * Mutation Observer for appendChild
+ ***********************************************/
+
+var observer = new MutationObserver(function(mutations) {
+    for (var i = 0; i < mutations.length; i++) {
+        var mutation = mutations[i];
+        switch(mutation.type) {
+            case 'childList':
+                console.log(mutation.addedNodes);
+                break;
+            default:
+
+        }
+    }
+});
+
+// HERE ARE THE STUFF TO CHANGE IF WE WANT SOMETHING ELSE THAN APPENDCHILD
+observer.observe(document, {
+    childList: true,
+    subtree: true,
+    attributes: true,
+    characterData: true
+});
+
+/***********************************************************
+ * Hide the header is contentHome is scrolled more than 50px
+ **********************************************************/
+const header = document.querySelector('.header-home');
+const contentHome = document.querySelector('.content--home');
+contentHome.addEventListener( 'scroll', (e) => {
+    var scrollPosition = contentHome.scrollTop;
+    if ( scrollPosition >= 50 ) {
+        header.classList.add('is-hidden');
+    } else {
+        header.classList.remove('is-hidden');
+    }
+
+});
+
+/***********************************************************
+ * Set multiples setAttribute
+ **********************************************************/
+function setAttributes(el, attrs) {
+    for(var key in attrs) {
+        el.setAttribute(key, attrs[key]);
+    }
+}
+
+// Example
+setAttributes(elem, {"src": "http://example.com/something.jpeg", "height": "100%", ...});
+
+/***********************************************************
+ * Get mouse position
+ **********************************************************/
+// Gets the mouse position
+const getMousePos = e => {
+    return {
+        x : e.clientX,
+        y : e.clientY
+    };
+};
+
+/***********************************************************
+ * Jquery Anonymous function
+ ***********************************************************/
+( function ( $ ) {
+    // Expressions
+} )( jQuery );
+
+/*******************************************************
+* HELPER FOR GETTING STROKE DASHARRAY and STROKE OFFSET
+* *****************************************************/
+function getStrokeDasharrayDashoffset() {
+    const path = document.querySelector('.svg-element path');
+    const pathL = path.getTotalLength();
+    console.log( pathL );
+}
+getStrokeDasharrayDashoffset();

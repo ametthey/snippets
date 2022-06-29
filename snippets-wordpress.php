@@ -402,7 +402,7 @@ print_r($categories);
 **********************************************************************/
 
 <?php
-    defined( 'ABSPATH' ) || die();
+defined( 'ABSPATH' ) || die();
 ?>
 
 /**********************************************************************
@@ -452,3 +452,30 @@ add_action('after_setup_theme', '_themename_remove_admin_bar_for_everyone');
 * 'inherit' - a revision. see get_children.
 * 'trash' - post is in trashbin. added with Version 2.9
 
+
+/**********************************************************************
+ * Links
+**********************************************************************/
+
+<?php
+get_permalink( get_page_by_path( 'contact' ) );
+get_permalink( get_page_by_title( 'Contact' ) )
+?>
+
+
+/**********************************************************************
+ * Function pour affiché tout les hooks sur un certain hook
+**********************************************************************/
+<?php
+
+add_filter( 'the_content', 'wpcookbook_content' );
+/**
+* Lists every function hooked on the current hook (the_content) *
+* @param string $content Content of the post.
+*/
+function wpcookbook_content( $content ){
+    global $wp_filter;
+    $html = '<pre>' . print_r( $wp_filter['mon_hook'], true ) . '</pre>';
+    return $content . $html;
+}
+?>

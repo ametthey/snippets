@@ -1,0 +1,109 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Dog	snippet-js.js	/^class Dog {$/;"	C
+_themename_image_configuration	snippets-wordpress.php	/^function _themename_image_configuration() {$/;"	f
+_themename_remove_admin_bar_for_everyone	snippets-wordpress.php	/^function _themename_remove_admin_bar_for_everyone() {$/;"	f
+_themename_remove_options_menu	snippets-wordpress.php	/^    function _themename_remove_options_menu(){$/;"	f
+_themename_widgets_init	snippets-wordpress.php	/^function _themename_widgets_init() {$/;"	f
+add	snippets-threejs.js	/^let add = 0.01;$/;"	V
+args	snippets-wordpress.php	/^$args = [$/;"	v
+args	snippets-wordpress.php	/^$args = {$/;"	v
+args	snippets-wordpress.php	/^<?php $args = [$/;"	v
+attr	snippets-wordpress.php	/^$attr = [$/;"	v
+attributes	snippet-js.js	/^    attributes: true,$/;"	P
+attributes	snippets-acf.php	/^        $attributes = 'frameborder="0" class="lozad" id="player"';$/;"	v
+backToTop	snippet-js.js	/^function backToTop() {$/;"	F
+bark	snippet-js.js	/^    bark() {$/;"	M
+behavior	snippet-js.js	/^                    behavior: "smooth"$/;"	P
+breed	snippet-js.js	/^        this.breed = breed;$/;"	P
+camera	snippets-threejs.js	/^    camera = new THREE.PerspectiveCamera(30,$/;"	P
+categories	snippets-wordpress.php	/^$categories = get_categories();$/;"	v
+characterData	snippet-js.js	/^    characterData: true$/;"	P
+childList	snippet-js.js	/^    childList: true,$/;"	P
+constructor	snippet-js.js	/^    constructor(name, breed) {$/;"	M
+container	snippet-js.js	/^    const container = document.querySelector('.container-archive-list');$/;"	V
+contentHome	snippet-js.js	/^const contentHome = document.querySelector('.content--home');$/;"	V
+count	snippets-php.php	/^    $count = 10;$/;"	v
+count	snippets-php.php	/^<?php $count = 10; ?>$/;"	v
+createSphere	snippets-threejs.js	/^let createSphere = function() {$/;"	F
+createTorus	snippets-threejs.js	/^let createTorus = function() {$/;"	F
+cursor	snippet-js.js	/^const cursor = {$/;"	O
+custom_redirects	snippets-wordpress.php	/^function custom_redirects() {$/;"	f
+d	snippets-wordpress.php	/^    $d = 'comment' == $type ? 'get_comment_time' : 'get_post_time';$/;"	v
+dolly	snippet-js.js	/^const dolly = Dog( 'Dolly', 'levrier' );$/;"	V
+element	snippet-js.js	/^const element = document.querySelector('.content--apropos');$/;"	V
+element	snippet-js.js	/^const element = document.querySelector('.element');$/;"	V
+elementHeight	snippet-js.js	/^const elementHeight = document.querySelector('.content--apropos').clientHeight;$/;"	V
+even	snippets-php.php	/^    $even = ($num % 2 == 0);$/;"	v
+even	snippets-php.php	/^ $even = ($num % 2 == 0);$/;"	v
+fadeBackgroundColor	snippet-js.js	/^function fadeBackgroundColor(scroll_pos) {$/;"	F
+fadeOut	snippet-js.js	/^    function fadeOut() {$/;"	F
+footer_message	snippets-wordpress.php	/^<?php $footer_message = '&copy' . date( 'Y' ) . ' ' . get_bloginfo( 'name' ); ?>$/;"	v
+for	snippet-js.js	/^    for(var key in attrs) {$/;"	M
+geometry	snippets-threejs.js	/^    let geometry = new THREE.TorusGeometry(5, 1, 30, 30, Math.PI);$/;"	V
+getStrokeDasharrayDashoffset	snippet-js.js	/^function getStrokeDasharrayDashoffset() {$/;"	F
+half	snippet-js.js	/^const half = elementHeight \/ 2;$/;"	V
+header	snippet-js.js	/^const header = document.querySelector('.header-home');$/;"	V
+hooked	snippets-wordpress.php	/^* Lists every function hooked on the current hook (the_content) *$/;"	f
+html	snippets-wordpress.php	/^    $html = '<pre>' . print_r( $wp_filter['mon_hook'], true ) . '<\/pre>';$/;"	v
+iframe	snippets-acf.php	/^        $iframe = get_field('youtube');$/;"	v
+iframe	snippets-acf.php	/^        $iframe = preg_replace('~<iframe[^>]*\\K(?=src)~i','data-',$iframe);$/;"	v
+iframe	snippets-acf.php	/^        $iframe = str_replace($src, $new_src, $iframe);$/;"	v
+iframe	snippets-acf.php	/^        $iframe = str_replace('><\/iframe>', ' ' . $attributes . '><\/iframe>', $iframe);$/;"	v
+inactivityTime	snippet-js.js	/^var inactivityTime = function () {$/;"	F
+info	snippet-js.js	/^    static info() {$/;"	M
+init	snippets-threejs.js	/^let init = function() {$/;"	F
+keyCode	snippet-js.js	/^    let keyCode = e.keyCode;$/;"	V
+last_known_scroll_position	snippet-js.js	/^    last_known_scroll_position = window.scrollY;$/;"	P
+last_known_scroll_position	snippet-js.js	/^let last_known_scroll_position = 0;$/;"	V
+mainLoop	snippets-threejs.js	/^let mainLoop = function() {$/;"	F
+myArray	snippet-js.js	/^const myArray = [ 'Romain', 'Fred', 'Vincent', 'Louis', 'Thomas', 'Tim' ];$/;"	A
+name	snippet-js.js	/^        this.name = name;$/;"	P
+new_src	snippets-acf.php	/^        $new_src = add_query_arg($params, $src);$/;"	v
+nick	snippet-js.js	/^        this.nick = value.trim();$/;"	P
+numberToDay	snippet-js.js	/^function numberToDay(j) {$/;"	F
+observerOptions	snippet-js.js	/^  const observerOptions = {$/;"	O
+odd	snippets-php.php	/^    $odd = ($num % 2 != 0);$/;"	v
+odd	snippets-php.php	/^ $odd = ($num % 2 != 0);$/;"	v
+params	snippets-acf.php	/^        $params = array($/;"	v
+path	snippet-js.js	/^    const path = document.querySelector('.svg-element path');$/;"	V
+pathL	snippet-js.js	/^    const pathL = path.getTotalLength();$/;"	V
+query	snippets-wordpress.php	/^$query = new WP_Query( $args );$/;"	v
+randomItem	snippet-js.js	/^const randomItem = Math.floor( Math.random() * myArray.length );$/;"	V
+renderer	snippets-threejs.js	/^    renderer = new THREE.WebGLRenderer();$/;"	P
+resetTimer	snippet-js.js	/^    function resetTimer() {$/;"	F
+root	snippet-js.js	/^       root: null,$/;"	P
+rootMargin	snippet-js.js	/^       rootMargin: '0px 0px -50px 0px'$/;"	P
+scene	snippets-threejs.js	/^    scene = new THREE.Scene();$/;"	P
+scrollPosition	snippet-js.js	/^    var scrollPosition = contentHome.scrollTop;$/;"	V
+scrollToTop	snippet-js.js	/^            function scrollToTop() {$/;"	F
+search	snippets-php.php	/^    $search     = 'en entière';$/;"	v
+sections	snippet-js.js	/^const sections = Array.from(document.getElementsByClassName('section'));$/;"	V
+setAttributes	snippet-js.js	/^function setAttributes(el, attrs) {$/;"	F
+sphere	snippets-threejs.js	/^    sphere = new THREE.Mesh( geometry, material );$/;"	P
+src	snippets-acf.php	/^        $src = $matches[1];$/;"	v
+subject	snippets-php.php	/^    $subject    = 'Ceci est une phrase en entière';$/;"	v
+subtree	snippet-js.js	/^    subtree: true,$/;"	P
+switch	snippet-js.js	/^        switch(mutation.type) {$/;"	M
+terms	snippets-wordpress.php	/^$terms = get_the_terms( $post->ID , 'custom_project_type', array('number' => 3) );$/;"	v
+threshold	snippet-js.js	/^       threshold: 0,$/;"	P
+ticking	snippet-js.js	/^            ticking = false;$/;"	P
+ticking	snippet-js.js	/^        ticking = true;$/;"	P
+ticking	snippet-js.js	/^let ticking = false;$/;"	V
+time	snippet-js.js	/^        time = setTimeout(fadeOut, 6000)$/;"	P
+time_ago	snippets-wordpress.php	/^function time_ago( $type = 'post' ) {$/;"	f
+title	snippet-js.js	/^const title = 'Je suis là';$/;"	V
+top	snippet-js.js	/^                    top: 0,$/;"	P
+torus	snippets-threejs.js	/^    torus = new THREE.Mesh( geometry, material );$/;"	P
+trimmed	snippets-php.php	/^    $trimmed    =  str_replace( $search, '', $subject );$/;"	v
+type	snippets-wordpress.php	/^function time_ago( $type = 'post' ) {$/;"	v
+wireframe	snippets-threejs.js	/^        wireframe: true});$/;"	P
+wpcookbook_content	snippets-wordpress.php	/^function wpcookbook_content( $content ){$/;"	f
+x	snippet-js.js	/^        x : e.clientX,$/;"	P
+x	snippet-js.js	/^    x: 0,$/;"	P
+y	snippet-js.js	/^        y : e.clientY$/;"	P
+y	snippet-js.js	/^    y: 0$/;"	P
