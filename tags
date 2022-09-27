@@ -50,6 +50,8 @@ half	snippet-js.js	/^const half = elementHeight \/ 2;$/;"	V
 header	snippet-js.js	/^const header = document.querySelector('.header-home');$/;"	V
 hooked	snippets-wordpress.php	/^* Lists every function hooked on the current hook (the_content) *$/;"	f
 html	snippets-wordpress.php	/^    $html = '<pre>' . print_r( $wp_filter['mon_hook'], true ) . '<\/pre>';$/;"	v
+if	snippet-js.js	/^		if(entry.isIntersecting){$/;"	M
+if	snippet-js.js	/^if(!!window.IntersectionObserver){$/;"	M
 iframe	snippets-acf.php	/^        $iframe = get_field('youtube');$/;"	v
 iframe	snippets-acf.php	/^        $iframe = preg_replace('~<iframe[^>]*\\K(?=src)~i','data-',$iframe);$/;"	v
 iframe	snippets-acf.php	/^        $iframe = str_replace($src, $new_src, $iframe);$/;"	v
@@ -66,7 +68,7 @@ name	snippet-js.js	/^        this.name = name;$/;"	P
 new_src	snippets-acf.php	/^        $new_src = add_query_arg($params, $src);$/;"	v
 nick	snippet-js.js	/^        this.nick = value.trim();$/;"	P
 numberToDay	snippet-js.js	/^function numberToDay(j) {$/;"	F
-observerOptions	snippet-js.js	/^  const observerOptions = {$/;"	O
+observerOptions	snippet-js.js	/^const observerOptions = {$/;"	O
 odd	snippets-php.php	/^    $odd = ($num % 2 != 0);$/;"	v
 odd	snippets-php.php	/^ $odd = ($num % 2 != 0);$/;"	v
 params	snippets-acf.php	/^        $params = array($/;"	v
@@ -76,13 +78,13 @@ query	snippets-wordpress.php	/^$query = new WP_Query( $args );$/;"	v
 randomItem	snippet-js.js	/^const randomItem = Math.floor( Math.random() * myArray.length );$/;"	V
 renderer	snippets-threejs.js	/^    renderer = new THREE.WebGLRenderer();$/;"	P
 resetTimer	snippet-js.js	/^    function resetTimer() {$/;"	F
-root	snippet-js.js	/^       root: null,$/;"	P
-rootMargin	snippet-js.js	/^       rootMargin: '0px 0px -50px 0px'$/;"	P
+root	snippet-js.js	/^    root: null,$/;"	P
+rootMargin	snippet-js.js	/^    rootMargin: '0px 0px -50px 0px'$/;"	P
 scene	snippets-threejs.js	/^    scene = new THREE.Scene();$/;"	P
 scrollPosition	snippet-js.js	/^    var scrollPosition = contentHome.scrollTop;$/;"	V
 scrollToTop	snippet-js.js	/^            function scrollToTop() {$/;"	F
 search	snippets-php.php	/^    $search     = 'en entière';$/;"	v
-sections	snippet-js.js	/^const sections = Array.from(document.getElementsByClassName('section'));$/;"	V
+sections	snippet-js.js	/^    const sections = Array.from(document.getElementsByClassName('section'));$/;"	V
 setAttributes	snippet-js.js	/^function setAttributes(el, attrs) {$/;"	F
 sphere	snippets-threejs.js	/^    sphere = new THREE.Mesh( geometry, material );$/;"	P
 src	snippets-acf.php	/^        $src = $matches[1];$/;"	v
@@ -90,7 +92,7 @@ subject	snippets-php.php	/^    $subject    = 'Ceci est une phrase en entière';$
 subtree	snippet-js.js	/^    subtree: true,$/;"	P
 switch	snippet-js.js	/^        switch(mutation.type) {$/;"	M
 terms	snippets-wordpress.php	/^$terms = get_the_terms( $post->ID , 'custom_project_type', array('number' => 3) );$/;"	v
-threshold	snippet-js.js	/^       threshold: 0,$/;"	P
+threshold	snippet-js.js	/^    threshold: 0,$/;"	P
 ticking	snippet-js.js	/^            ticking = false;$/;"	P
 ticking	snippet-js.js	/^        ticking = true;$/;"	P
 ticking	snippet-js.js	/^let ticking = false;$/;"	V

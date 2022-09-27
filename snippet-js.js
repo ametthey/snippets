@@ -60,6 +60,24 @@ Math.floor(Math.random()*(999-100+1)+100);
  ***********************************************/
 Math.floor(Math.random() * 100)
 
+/****************************************************
+* Fade In when images in 200px in viewport
+* *************************************************/
+if(!!window.IntersectionObserver){
+	let observer = new IntersectionObserver((entries, observer) => {
+		entries.forEach(entry => {
+		if(entry.isIntersecting){
+			console.log(entry.target.src);
+			observer.unobserve(entry.target);
+		}
+		});
+	}, {rootMargin: "0px 0px -200px 0px"});
+	document.querySelectorAll('img').forEach(img => { observer.observe(img) });
+}
+
+else document.querySelector('#warning').style.display = 'block';
+
+
 
 
 /************************************************
@@ -67,28 +85,28 @@ Math.floor(Math.random() * 100)
  * querySelectorAll
  * adding and removing is-visible class
  ***********************************************/
-  const observerOptions = {
-       root: null,
-       threshold: 0,
-       rootMargin: '0px 0px -50px 0px'
-   };
+const observerOptions = {
+    root: null,
+    threshold: 0,
+    rootMargin: '0px 0px -50px 0px'
+};
 
 const observer = new IntersectionObserver(entries => {
-       entries.forEach(entry => {
-           if (entry.isIntersecting) {
-               entry.target.classList.add('in-view');
-               observer.unobserve(entry.target);
-           }
-       });
-   }, observerOptions);
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('in-view');
+            observer.unobserve(entry.target);
+        }
+    });
+}, observerOptions);
 
 window.addEventListener('DOMContentLoaded', (event) => {
 
-const sections = Array.from(document.getElementsByClassName('section'));
+    const sections = Array.from(document.getElementsByClassName('section'));
 
-for (let section of sections) {
-  observer.observe(section);
-}
+    for (let section of sections) {
+        observer.observe(section);
+    }
 
 });
 
