@@ -342,3 +342,21 @@ function getStrokeDasharrayDashoffset() {
     console.log( pathL );
 }
 getStrokeDasharrayDashoffset();
+
+/*******************************************************
+* Match media
+* *****************************************************/
+// If we resize to desktop size, hide the mobile menu
+function mediaMatchScreenSize(screenSize) {
+    // DESKTOP
+    if (screenSize.matches){ // if media query matches
+    }
+    //Mobile
+    else{
+    }
+}
+let screenSize = window.matchMedia("screen and (min-width: 768px)")
+screenSize.addListener( mediaMatchScreenSize );
+
+mediaMatchScreenSize(screenSize);
+

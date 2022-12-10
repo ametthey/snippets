@@ -63,6 +63,7 @@ keyCode	snippet-js.js	/^    let keyCode = e.keyCode;$/;"	V
 last_known_scroll_position	snippet-js.js	/^    last_known_scroll_position = window.scrollY;$/;"	P
 last_known_scroll_position	snippet-js.js	/^let last_known_scroll_position = 0;$/;"	V
 mainLoop	snippets-threejs.js	/^let mainLoop = function() {$/;"	F
+mediaMatchScreenSize	snippet-js.js	/^function mediaMatchScreenSize(screenSize) {$/;"	F
 myArray	snippet-js.js	/^const myArray = [ 'Romain', 'Fred', 'Vincent', 'Louis', 'Thomas', 'Tim' ];$/;"	A
 name	snippet-js.js	/^        this.name = name;$/;"	P
 new_src	snippets-acf.php	/^        $new_src = add_query_arg($params, $src);$/;"	v
